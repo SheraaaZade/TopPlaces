@@ -1,0 +1,55 @@
+﻿<Window x:Name="window" x:Class="TopPlaces.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TopPlaces"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="795">
+    <Window.Resources>
+    </Window.Resources>
+    <Window.OpacityMask>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black"/>
+            <GradientStop Color="#FFE4B3B3" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.OpacityMask>
+    <Grid Margin="0,0,0,-6">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FFB0B1DA" Offset="0.417"/>
+                <GradientStop Color="#FFD494CC" Offset="0.992"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.OpacityMask>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FFCC8181" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.OpacityMask>
+        <Label Content="Top Places" HorizontalAlignment="Left" Style="{StaticResource TitreStyle}" FontFamily="French Script MT" FontSize="72" Width="258" Margin="26,10,0,317"/>
+        <Image x:Name="image1" Source="./photos/amsterdam.jpg"  Stretch="Fill" RenderTransformOrigin="0.5,0.5" Margin="53,93,309,109" >
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-4.518"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+        <Label Content="Description" Style="{StaticResource TitreStyle}" Margin="0,356,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="French Script MT" FontSize="36" Height="52" Width="141"/>
+        <Label x:Name="description_value" Content="Description Value" Style="{StaticResource TitreStyle}" Margin="84,391,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        <Label Content="URI fichier" Style="{StaticResource TitreStyle}" Margin="269,356,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="French Script MT" FontSize="36"/>
+        <Label x:Name="uri_value" Content="URI Value" Style="{StaticResource TitreStyle}" Margin="398,391,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        <Label Content="Votes" Style="{StaticResource TitreStyle}" Margin="549,347,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="French Script MT" FontSize="36"/>
+        <Label x:Name="votes_value" Content="Votes Value" Style="{StaticResource TitreStyle}"  Margin="620,391,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="33" Width="128"/>
+
+        <ListBox x:Name="listBoxPhotos" ItemsSource="{Binding ListCity}" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="549,95,71,165" FontFamily="Lucida Calligraphy" FontSize="14" Background="{Binding ElementName=window, Mode=OneWay}"/>
+
+    </Grid>
+</Window>
